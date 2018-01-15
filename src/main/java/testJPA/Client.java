@@ -1,5 +1,6 @@
 package testJPA;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -27,7 +28,7 @@ public class Client {
 	
 	
 	public Client(){
-		
+		emprunt= new HashSet<Emprunt>();
 	}
 
 
