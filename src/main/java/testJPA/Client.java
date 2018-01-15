@@ -1,0 +1,66 @@
+package testJPA;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CLIENT")
+public class Client {
+
+	@Id
+	private Integer id;
+	@Column(name="ID" , length=10,nullable = false, unique = true)
+	Integer id_client;
+	@Column(name="NOM", length=50,nullable = false, unique = true)
+	private String nom;
+	@Column(name="PRENOM", length=50,nullable = false, unique = true)
+	private String prenom;
+	
+	
+	@OneToMany(mappedBy="client")
+	private Set<Emprunt> emprunt;
+	
+	
+	public Client(){
+		
+	}
+
+
+	/**
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+	/**
+	 * @return the prenom
+	 */
+	public String getPrenom() {
+		return prenom;
+	}
+
+
+	/**
+	 * @param prenom the prenom to set
+	 */
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	
+	
+}
