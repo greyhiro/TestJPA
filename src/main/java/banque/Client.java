@@ -27,6 +27,14 @@ public class Client {
 	private String prenom;
 	@Column(name = "DATE_DE_NAISSANCE", nullable = false)
 	private LocalDate dateDeNaissance;
+	
+	@ManyToMany
+	@JoinTable(name="COMPTE_CLIENT",
+
+	joinColumns= @JoinColumn(name="ID_COMPTE", referencedColumnName="ID"),
+	inverseJoinColumns= @JoinColumn(name="ID_CLIENT", referencedColumnName="ID")
+	)
+	private Set<Compte> compte;
 
 
 	@ManyToOne
@@ -55,14 +63,7 @@ public class Client {
 		this.banque = banque;
 	}
 
-	@ManyToMany
-	@JoinTable(name="COMPTE_CLIENT",
-
-	joinColumns= @JoinColumn(name="ID_COMPTE", referencedColumnName="ID"),
-	inverseJoinColumns= @JoinColumn(name="ID_CLIENT", referencedColumnName="ID")
-	)
-	private Set<Compte> compte;
-
+	
 	/**
 	 * @return the compte
 	 */

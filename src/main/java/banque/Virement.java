@@ -18,6 +18,7 @@ public class Virement {
 	private String beneficiare;
 	
 	
+	
 	/**
 	 * JPA CONSTRUCTOR
 	 */
