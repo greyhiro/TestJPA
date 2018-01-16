@@ -27,6 +27,7 @@ public class Client {
 	private Set<Emprunt> emprunt;
 	
 	
+	
 	public Client(){
 		emprunt= new HashSet<Emprunt>();
 	}

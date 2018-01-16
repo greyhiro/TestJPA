@@ -43,8 +43,8 @@ public class TestJPA {
 			CONSOLE.info("\n\n\n" + liv.getAuteur() + " " + liv.getTitre() + "\n\n\n");
 
 			/*
-			 * Réaliser une requête qui permet d’extraire un emprunt et tous
-			 * ses livres associés.
+			 * Réaliser une requête qui permet d’extraire un emprunt et tous ses
+			 * livres associés.
 			 */
 
 			Query queryEmp = em.createQuery("select l FROM Livre l");
@@ -54,13 +54,36 @@ public class TestJPA {
 				Livre livr = (Livre) queryEmp.getResultList().get(i);
 
 				for (Emprunt e : livr.getEmprunt()) {
-					CONSOLE.info(e.getClient().getNom()+" "+e.getClient().getPrenom()+"\n a emprunter:\n  AUTEUR:"+liv.getAuteur()+" \n ID: "+liv.getId()+"\n TITRE: "+liv.getTitre());
+
+					CONSOLE.info(e.getClient().getNom() + " " + e.getClient().getPrenom() + "\n a emprunter:\n  AUTEUR:"
+							+ liv.getAuteur() + " \n ID: " + liv.getId() + "\n TITRE: " + liv.getTitre());
+
 				}
 
 			}
+			/*
+			 * Réaliser une requête qui permet d’extraire tous les emprunts d’un
+			 * client donné.
+			 */
 
+			Query queryEmmpParNom = em.createQuery("select l FROM Livre l");
+
+			for (i = 0; i < queryEmmpParNom.getResultList().size(); i++) {
+
+				Livre livr = (Livre) queryEmmpParNom.getResultList().get(i);
+				CONSOLE.info("Emprunt au Nom de Brigand");
+
+				for (Emprunt e : livr.getEmprunt()) {
+
+					if (e.getClient().getNom() == "Brigand") {
+						CONSOLE.info(
+								e.getClient().getNom() + " " + e.getClient().getPrenom() + "\n a emprunter:\n  AUTEUR:"
+										+ liv.getAuteur() + " \n ID: " + liv.getId() + "\n TITRE: " + liv.getTitre());
+					}
+				}
+
+			}
 		}
-
 	}
 
 }
