@@ -18,7 +18,7 @@ public class Compte {
 	private Integer id;
 	@Column(name = "NUMERO", length = 20, nullable = false, unique = true)
 	private String num;
-	@Column(name = "SOLDE", length = 10, nullable = false, unique = true)
+	@Column(name = "SOLDE", length = 10, nullable = false)
 	private double solde;
 
 	/**

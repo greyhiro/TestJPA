@@ -21,9 +21,9 @@ public class Client {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	@Column(name = "NOM", length = 50, nullable = false, unique = true)
+	@Column(name = "NOM", length = 50, nullable = false)
 	private String nom;
-	@Column(name = "PRENOM", length = 50, nullable = false, unique = true)
+	@Column(name = "PRENOM", length = 50, nullable = false)
 	private String prenom;
 	@Column(name = "DATE_DE_NAISSANCE", nullable = false)
 	private LocalDate dateDeNaissance;

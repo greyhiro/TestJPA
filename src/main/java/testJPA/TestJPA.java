@@ -19,7 +19,7 @@ public class TestJPA {
 		EntityManager em = entityManagerFactory.createEntityManager();
 		Query query = em.createQuery("select l from Client l WHERE id=1");
 		Client client = (Client) query.getResultList().get(0);
-		CONSOLE.info("\n" + client.getNom() + " " + client.getPrenom() + " " + client.id_client);
+		CONSOLE.info("\n" + client.getNom() + " " + client.getPrenom() + " ");
 
 		/*
 		 * Réaliser un find simple permettant d’extraire un livre en fonction de

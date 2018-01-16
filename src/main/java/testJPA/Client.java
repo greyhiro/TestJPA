@@ -15,11 +15,9 @@ public class Client {
 
 	@Id
 	private Integer id;
-	@Column(name="ID" , length=10,nullable = false, unique = true)
-	Integer id_client;
-	@Column(name="NOM", length=50,nullable = false, unique = true)
+	@Column(name="NOM", length=50,nullable = false)
 	private String nom;
-	@Column(name="PRENOM", length=50,nullable = false, unique = true)
+	@Column(name="PRENOM", length=50,nullable = false)
 	private String prenom;
 	
 	
